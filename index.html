@@ -99,7 +99,12 @@
       
         <h1 id="欢迎来到我的-Hexo-博客！"><a href="#欢迎来到我的-Hexo-博客！" class="headerlink" title="欢迎来到我的 Hexo 博客！"></a>欢迎来到我的 Hexo 博客！</h1><p>这是我写的第一篇 Hexo 文章。我打算在这里记录我的学习、实验和生活点滴。</p>
 <hr>
-<h2 id="文章小标题示例"><a href="#文章小标题示例" class="headerlink" title="文章小标题示例"></a>文章小标题示例</h2><p>你可以在这里写一些段落文字，Markdown 支持<strong>加粗</strong>、<em>斜体</em>，例如：</p>
+<h2 id="今日学习回顾"><a href="#今日学习回顾" class="headerlink" title="今日学习回顾"></a>今日学习回顾</h2><h2 id="关于sql"><a href="#关于sql" class="headerlink" title="关于sql"></a>关于sql</h2><p> <strong>学了事务</strong><br> <strong>原子性</strong>就是事务不可分割,<br> <strong>一致性</strong>就是事务完成了数据要一致,<br> <strong>隔离性</strong>就是两个事务互不干扰,<br> <strong>持久性</strong>就是事务commit了就永久有效…</p>
+<p> 还有几个并发事务的问题:<br> <strong>脏读</strong>就是事务1读取了事务2修改过的数据<br>  read commited可以解决<br> <strong>不可重复读</strong>就是事务1读取id1,如然后事务2修改id1,事务1再读id1结果和第一次不一样<br>  repeatable read 可以解决<br> <strong>幻读</strong>比较抽象,事务1读取id1没读到,事务2插入id1,事务1想插入发现已经有id1了<br> serializable可以解决(记这些有啥用…)</p>
+<p> <strong>刷了几道题</strong><br> 印象较深的是窗口函数,感觉慢厉害的rank()over()—-&gt; over就是开窗户<br> <strong>我的代码(已经格式化了)</strong><br> <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">    <span class="keyword">select</span></span><br><span class="line">    device_id,</span><br><span class="line">    university,</span><br><span class="line">    gpa</span><br><span class="line"><span class="keyword">from</span></span><br><span class="line">    (</span><br><span class="line">        <span class="keyword">select</span></span><br><span class="line">            <span class="operator">*</span>,</span><br><span class="line">            <span class="built_in">row_number</span>() <span class="keyword">over</span> (</span><br><span class="line">                <span class="keyword">partition</span> <span class="keyword">by</span></span><br><span class="line">                    university</span><br><span class="line">                <span class="keyword">order</span> <span class="keyword">by</span></span><br><span class="line">                    gpa</span><br><span class="line">            ) <span class="keyword">as</span> rnk</span><br><span class="line">        <span class="keyword">from</span></span><br><span class="line">            user_profile</span><br><span class="line">    ) t</span><br><span class="line"><span class="keyword">where</span></span><br><span class="line">    rnk <span class="operator">=</span> <span class="number">1</span></span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span></span><br><span class="line">    university;</span><br></pre></td></tr></table></figure><br>也可以用group by加上子查询,不知道我还能不能写出来…</p>
+<hr>
+<h2 id="洛谷今天没刷-已经刷了两百题了-后面可能转战leetcode了"><a href="#洛谷今天没刷-已经刷了两百题了-后面可能转战leetcode了" class="headerlink" title="洛谷今天没刷,已经刷了两百题了,后面可能转战leetcode了"></a>洛谷今天没刷,已经刷了两百题了,后面可能转战leetcode了</h2><p>说到力扣,今天学了哈希表,做了第一题两数之和,<strong>梦开始的地方</strong>哈哈<br>今天有点累累了,每天再写吧,按ctrl+s保存吗…</p>
+<p>你可以在这里写一些段落文字，Markdown 支持<strong>加粗</strong>、<em>斜体</em>，例如：</p>
 <ul>
 <li><strong>Bold</strong> → <code>**Bold**</code></li>
 <li><em>Italic</em> → <code>*Italic*</code></li>
@@ -125,7 +130,7 @@ console.log(&quot;Hello Hexo!&quot;);
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2026/02/22/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/" data-id="cuidTmn0Qh1uZ2XyYT7YZa_Ax" data-title="我的第一篇文章" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2026/02/22/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/" data-id="cuid1ZCCh-8LQfjmBS1QAfZ51" data-title="我的第一篇文章" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -178,7 +183,7 @@ console.log(&quot;Hello Hexo!&quot;);
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2026/02/22/hello-world/" data-id="cuidLAk-FXan5AIbEWQmoMzoZ" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2026/02/22/hello-world/" data-id="cuidiaqNbEz3Ugt8KfUFn3umy" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
