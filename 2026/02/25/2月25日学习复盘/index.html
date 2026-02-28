@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>&#39;2月25日学习复盘&#39; | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="到底改写点啥,我真的好难过啊,反正也不会有人看到… 关于SQL索引1.按存储形式分类:  聚簇索引,一般是id,只有一个  二级索引,多个 2.索引结构:  B+Tree  R tree hash索引 fulltext(全文本?)索引  为什么 InnoDB 存储引擎选择使用 B+Tree 索引结构？答:平衡,节约空间,只有叶子结点存数据,支持范围匹配及排序操作,查询效率高InnoDB 主键索引的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="&#39;2月25日学习复盘&#39;">
+<meta property="og:url" content="http://example.com/2026/02/25/2%E6%9C%8825%E6%97%A5%E5%AD%A6%E4%B9%A0%E5%A4%8D%E7%9B%98/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="到底改写点啥,我真的好难过啊,反正也不会有人看到… 关于SQL索引1.按存储形式分类:  聚簇索引,一般是id,只有一个  二级索引,多个 2.索引结构:  B+Tree  R tree hash索引 fulltext(全文本?)索引  为什么 InnoDB 存储引擎选择使用 B+Tree 索引结构？答:平衡,节约空间,只有叶子结点存数据,支持范围匹配及排序操作,查询效率高InnoDB 主键索引的">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2026-02-25T12:59:41.000Z">
+<meta property="article:modified_time" content="2026-02-28T13:26:16.656Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="sql java">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+<meta name="generator" content="Hexo 8.1.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-2月25日学习复盘" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/02/25/2%E6%9C%8825%E6%97%A5%E5%AD%A6%E4%B9%A0%E5%A4%8D%E7%9B%98/" class="article-date">
+  <time class="dt-published" datetime="2026-02-25T12:59:41.000Z" itemprop="datePublished">2026-02-25</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/">学习心得</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      &#39;2月25日学习复盘&#39;
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="到底改写点啥-我真的好难过啊-反正也不会有人看到…"><a href="#到底改写点啥-我真的好难过啊-反正也不会有人看到…" class="headerlink" title="到底改写点啥,我真的好难过啊,反正也不会有人看到…"></a>到底改写点啥,我真的好难过啊,反正也不会有人看到…</h2><hr>
+<h2 id="关于SQL"><a href="#关于SQL" class="headerlink" title="关于SQL"></a>关于SQL</h2><h1 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h1><p>1.按存储形式分类:<br>  聚簇索引,一般是id,只有一个<br>  二级索引,多个</p>
+<p>2.索引结构:<br>  B+Tree  R tree hash索引 fulltext(全文本?)索引 </p>
+<p>为什么 InnoDB 存储引擎选择使用 B+Tree 索引结构？<br>答:平衡,节约空间,只有叶子结点存数据,支持范围匹配及排序操作,查询效率高<br>InnoDB 主键索引的 B+Tree 高度为多少？<br>答:答：假设一行数据大小为1k，一页中可以存储16行这样的数据。InnoDB 的指针占用6个字节的空间，主键假设为bigint，占用字节数为8.<br>可得公式：n * 8 + (n + 1) * 6 &#x3D; 16 * 1024，其中 8 表示 bigint 占用的字节数，n 表示当前节点存储的key的数量，(n + 1) 表示指针数量（比key多一个）。算出n约为1170。</p>
+<h1 id="索引类型"><a href="#索引类型" class="headerlink" title="索引类型:"></a>索引类型:</h1><p>主键索引:只有一个,一般默认创建primary<br>唯一索引:有多个,避免列数据重复unique<br>常规索引:多个,快速定位特定数据<br>全文索引:多个,全文范围索引,查找关键字不比较值fulltext</p>
+<h1 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h1><p>创建索引：create 类型index 索引名字 on 表(字段)<br>查看:show index from 表<br>删除:drop index 索引名 on 表<br>explain查看执行计划<br>查询快慢 null system constant eq_ref ref </p>
+<p>最左前缀法则,可以用&lt;&#x3D;不能只用&lt;</p>
+<h1 id="语法练习"><a href="#语法练习" class="headerlink" title="语法练习:"></a>语法练习:</h1><p>窗口函数还是要加强,子查询还是有点不熟练,要记得fwghso</p>
+<h1 id="今天没练java语法"><a href="#今天没练java语法" class="headerlink" title="今天没练java语法,"></a>今天没练java语法,</h1><p>继承:✅ 本质：子类自动拥有父类的属性和方法</p>
+<pre><code> ⚠️ 注意：
+
+ Java 单继承：子类只能继承一个父类
+
+子类可以访问父类的非 private 成员，但 private 的需要通过方法访问
+</code></pre>
+<p>多态:✅ 本质：同一个父类引用，不同子类对象表现出不同行为</p>
+<pre><code> ⚠️ 纠正：
+
+“子类用不同于父类的方法” → 更准确说法是 子类重写父类方法，父类引用指向子类对象时，执行子类的方法
+</code></pre>
+<p>接口:可以定义多个方法,只声明方法,不关注实现(那什么关注实现)</p>
+<p>封装:子类和外部类不可以直接调用父类的属性,只能通过特定方法访问</p>
+<p>oop;面相对象编程</p>
+<p>重载:重写父类方法</p>
+<p>构造函数(构造器):初始化当前类对象,如果是子类,默认<strong>先</strong>调用父类构造器</p>
+<p>this关键字区分作用域<br>final关键字定义常量</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2026/02/25/2%E6%9C%8825%E6%97%A5%E5%AD%A6%E4%B9%A0%E5%A4%8D%E7%9B%98/" data-id="cuidxJzaZf2PA3X86hcm55uDd" data-title="&#39;2月25日学习复盘&#39;" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sql-java/" rel="tag">sql java</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2026/02/23/2026-02-23-%E4%BB%8A%E6%97%A5%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">2026-02-23 今日学习记录</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%8D%9A%E5%AE%A2%E5%AD%A6%E4%B9%A0/">博客学习</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/">学习心得</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8A%9B%E6%89%A3-pytorch-docker-sql/" rel="tag">-力扣 -pytorch -docker -sql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sql-java/" rel="tag">sql java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%96%B0%E6%89%8B/" rel="tag">新手</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/%E5%8A%9B%E6%89%A3-pytorch-docker-sql/" style="font-size: 10px;">-力扣 -pytorch -docker -sql</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/sql-java/" style="font-size: 10px;">sql java</a> <a href="/tags/%E6%96%B0%E6%89%8B/" style="font-size: 10px;">新手</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/02/">February 2026</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2026/02/25/2%E6%9C%8825%E6%97%A5%E5%AD%A6%E4%B9%A0%E5%A4%8D%E7%9B%98/">&#39;2月25日学习复盘&#39;</a>
+          </li>
+        
+          <li>
+            <a href="/2026/02/23/2026-02-23-%E4%BB%8A%E6%97%A5%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/">2026-02-23 今日学习记录</a>
+          </li>
+        
+          <li>
+            <a href="/2026/02/22/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/">我的第一篇文章</a>
+          </li>
+        
+          <li>
+            <a href="/2026/02/22/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2026 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
